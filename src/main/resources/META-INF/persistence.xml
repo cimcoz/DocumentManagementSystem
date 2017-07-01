@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  <!--<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">-->
+  <!--<persistence-unit name="docm?zeroDateTimeBehavior=convertToNullPU" transaction-type="RESOURCE_LOCAL" name="entityManager">-->
+  <persistence-unit name="entityManager">
+    <!--    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>view.Businesspartner</class>
+        <class>com.documentsystem.model.Role</class>
+        <class>com.documentsystem.model.Users</class>
+        <class>com.documentsystem.model.Positions_1</class>
+        <class>view.Positions</class>-->
+    <class>automodel.Documenttype</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/docm"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.password" value=""/>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+      <property name="hibernate.show_sql" value="true"/>
+      <mapping class="com.documentsystem.model.*"/>
+      <!--<property name="hibernate.hbm2ddl.auto" value="update"/>-->
+      <!--      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/docm?zeroDateTimeBehavior=convertToNull"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.password" value=""/>-->
+    </properties>
+  </persistence-unit>
+</persistence>
